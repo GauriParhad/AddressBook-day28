@@ -12,6 +12,8 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
+import com.opencsv.CSVWriter;
+
 
 public class ContactCreation {
     public void MultipleAddressBook() {
@@ -31,6 +33,8 @@ public class ContactCreation {
         Map<String, List<ContactInfo>> addressBooks = new HashMap<>();
 
         protected void MultipleAddressBook() {
+        //Write CSV IO File
+            CSVWriter writer=new CSVWriter(new FileWriter("D://output.csv"));
             try {
                 while (true) {
                     System.out.println("What would you like to do? \n" +
@@ -289,14 +293,15 @@ public class ContactCreation {
                 }
             }
 
-            try {
+
+                try {
                 BufferedReader in;
-                details = in.readLine();
+                    String details = in.readLine();
                 String[] tokens = details.split(":");
                 String FirstName = tokens[0];
-                Address = tokens[2];
+                String Address = tokens[2];
                 Lastname = token[1];
-                phnumber = token[3];
+                int phnumber = token[3];
             } catch (IOException e1){ }
 
             FileWriter fw=null;
