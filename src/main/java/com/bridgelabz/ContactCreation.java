@@ -293,7 +293,7 @@ public class ContactCreation {
                 BufferedReader in;
                 details = in.readLine();
                 String[] tokens = details.split(":");
-                FirstName = tokens[0];
+                String FirstName = tokens[0];
                 Address = tokens[2];
                 Lastname = token[1];
                 phnumber = token[3];
