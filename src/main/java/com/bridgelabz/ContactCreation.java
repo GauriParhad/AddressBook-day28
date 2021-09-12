@@ -1,16 +1,9 @@
 package com.bridgelabz;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.Scanner;
-import java.io.Console;
 import java.util.stream.Stream;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.InputStreamReader;
-import java.io.IOException;
 
 import com.opencsv.CSVWriter;
 
@@ -33,8 +26,8 @@ public class ContactCreation {
         Map<String, List<ContactInfo>> addressBooks = new HashMap<>();
 
         protected void MultipleAddressBook() {
-        //Write CSV IO File
-            CSVWriter writer=new CSVWriter(new FileWriter("D://output.csv"));
+            //Write CSV IO File
+            CSVWriter writer = new CSVWriter(new FileWriter("D://output.csv"));
             try {
                 while (true) {
                     System.out.println("What would you like to do? \n" +
@@ -79,6 +72,7 @@ public class ContactCreation {
                 System.out.println(e);
             }
         }
+
         private void MultipleContact(List<ContactInfo> contactList, Map<String, List<ContactInfo>> addressBook, String newBook) {
             private void displayContact (List < ContactInfo > contactList) {
                 try {
@@ -327,6 +321,29 @@ public class ContactCreation {
                 }
             }
         }
+    }
+    //WRITE json FILE
+    JSONObject obj=new JSONObject();
+    obj.put("name","state","city");
+    obj.put("782892624","Maharashtra","Nagpur");
+
+    JSONArray list=new JSONArray();
+    list.add("msg 1");
+    list.add("msg 2");
+    list.add("msg 3");
+
+    obj.put("messages",list);
+
+    try (FileWriter file =new FileWriter("c:\\projects\\test.json")){
+    file.write(obj.toJSONString());
+    }catch (IOException e) {
+    e.printStackTrace();
+    }
+    System.out.print(obj);
+
+        }
+        }
+
 }
 
 
