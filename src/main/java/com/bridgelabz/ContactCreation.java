@@ -1,9 +1,30 @@
 package com.bridgelabz;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Scanner;
+import java.io.Console;
+import java.util.stream.Stream;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
 
 public class ContactCreation {
     public void MultipleAddressBook() {
+        public interface  Inter
+        {
+            public void addContact();
+            public void deleteContact();
+            public void searchContact();
+            public void editContact();
+            public void searchName();
+            public void contactsInCity();
+            public void contactsInState();
+
 
     public class ContactCreation {
         static Scanner scanner = new Scanner(System.in);
@@ -230,7 +251,8 @@ public class ContactCreation {
                 return -1;
             }
 
-            private void searchAcrossCity(String contactsInCity) {
+            private void searchAcrossCity(String String contactsInCity;
+                contactsInCity) {
                 try {
                     for (String keyOfBook : addressBooks.keySet()) {
                         long noOfContactsInCity = addressBooks.get(keyOfBook)
@@ -248,7 +270,8 @@ public class ContactCreation {
                 }
             }
 
-            private void searchAcrossState(String contactsInState) {
+            private void searchAcrossState(String String contactsInState;
+                contactsInState) {
                 try {
                     for (String keyOfBook : addressBooks.keySet()) {
                         long noOfContactsInState = addressBooks.get(keyOfBook)
@@ -265,10 +288,36 @@ public class ContactCreation {
                     System.out.println(e.getMessage());
                 }
             }
-        }
 
-        private int searchName(List<ContactInfo> contactList, String Object firstName;
-            firstName) {
+            try {
+                BufferedReader in;
+                details = in.readLine();
+                String[] tokens = details.split(":");
+                FirstName = tokens[0];
+                Address = tokens[2];
+                Lastname = token[1];
+                phnumber = token[3];
+            } catch (IOException e1){ }
+
+            FileWriter fw=null;
+            try
+            {
+                fw=new FileWriter("data.dat");
+                fw.write(Firstname);
+                fw.write(Lastname);
+                fw.write(Address);
+                fw.write(phnumber);
+            } catch(IOException e){ }
+            BufferedWriter bw = new BufferedWriter(fw);
+            }
+            public void readFile()
+            { try
+            {
+                BufferedReader in = new BufferedReader(new FileReader("data.dat"));
+                String str;
+                while ((str = in.readLine() !=null))
+                {}
+            } catch (Exception ex) { }
         }
     }
 }
