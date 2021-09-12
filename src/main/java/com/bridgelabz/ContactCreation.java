@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 
 public class ContactCreation {
     public void MultipleAddressBook() {
-    }
 
     public class ContactCreation {
         static Scanner scanner = new Scanner(System.in);
@@ -55,6 +54,41 @@ public class ContactCreation {
                 System.out.println(e);
             }
         }
+        private void MultipleContact(List<ContactInfo> contactList, Map<String, List<ContactInfo>> addressBook, String newBook) {
+            private void displayContact(List<ContactInfo> contactList) { try {
+                boolean run = true;
+                while (run) {
+                    System.out.println("What would u like to do with contacts? \n" +
+                            "1. ADD     \n" +
+                            "2. DISPLAY \n" +
+                            "3. EDIT    \n" +
+                            "4. REMOVE  \n" +
+                            "0. EXIT    ");
+                    int choice = scanner.nextInt();
+                    switch (choice) {
+                        case 1:
+                            List<ContactInfo> multiContactInBook = addContact(contactList);
+                            addressBook.put(newBook, multiContactInBook);
+                            break;
+                        case 2:
+                            displayContact(contactList);
+                            break;
+                        case 3:
+                            editContact(contactList);
+                            break;
+                        case 4:
+                            deleteContact(contactList);
+                            break;
+                        default:
+                            run = false;
+                            break;
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+
     }
 }
 
